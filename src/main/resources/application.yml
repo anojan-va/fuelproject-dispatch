@@ -1,0 +1,36 @@
+server:
+  port: 8194
+
+spring:
+  datasource: 
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/dispatchDB?createDatabaseIfNotExist=true
+    username: root
+    password: 
+  kafka:
+    consumer:
+      bootstrap-servers: localhost:9092
+      group-id: dispatch
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+    properties:
+      spring:
+        json:
+          trusted:
+            packages: "*"
+    producer:
+      bootstrap-servers: localhost:9092
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+       
+      
+    topic:
+      name: order-topic
+      name-producer: dispatch-topic      
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+      
+
