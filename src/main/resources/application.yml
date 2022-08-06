@@ -27,7 +27,8 @@ spring:
       
     topic:
       name: order-topic
-      name-producer: dispatch-topic      
+      name-producer: dispatch-topic
+      name-producer-delivery: delivery-topic      
 
   jpa:
     hibernate:
