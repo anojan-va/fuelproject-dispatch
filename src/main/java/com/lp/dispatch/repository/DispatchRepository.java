@@ -7,4 +7,5 @@ import com.lp.dispatch.model.Dispatch;
 @Repository
 public interface DispatchRepository extends JpaRepository<Dispatch, Integer>{
 
+	Dispatch findByOrderId(int orderId);
 }

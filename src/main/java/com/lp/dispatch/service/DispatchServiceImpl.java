@@ -16,5 +16,11 @@ public class DispatchServiceImpl implements DispatchService{
 	public Dispatch save(Dispatch dispatch) {
 		return dispatchRepository.save(dispatch);
 	}
+
+	@Override
+	public Dispatch findByOrderId(int orderId) {
+		
+		return dispatchRepository.findByOrderId(orderId);
+	}
 	
 }
