@@ -43,12 +43,15 @@ public class DispatchController {
 		order_response.setOrderId(dispatchResponse.getOrderId());
 		order_response.setOrderStatus("Dispatched");
 		order_response.setStatusDate(dispatchResponse.getDispatchDate());
+		order_response.setFuelType(dispatchResponse.getFuelType());
+		order_response.setQuantity(dispatchResponse.getDispatchQty());
 		
 		OrderEvent orderEvent = new OrderEvent();
 		orderEvent.setMessage("Order Dispatched");
 		orderEvent.setStatus("sucess");
 		orderEvent.setOrder(order_response);
 		dispatchProducer.sendMessage(orderEvent);
+		System.out.println(orderEvent.getOrder().getOrderStatus()+":System print");
 				
 		return dispatchResponse;
 	}

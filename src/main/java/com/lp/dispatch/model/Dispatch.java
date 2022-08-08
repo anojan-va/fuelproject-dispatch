@@ -23,6 +23,6 @@ public class Dispatch {
 	@Column(name="dispatch_qty")
 	private int dispatchQty;
 	@Column(name="dispatch_date")
-	private LocalDate dispatchDate;
+	private LocalDate dispatchDate=LocalDate.now();
 	
 }

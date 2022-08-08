@@ -23,5 +23,5 @@ public class Delivery {
 	@Column(name="delivery_qty")
 	private int deliveryQty;
 	@Column(name="delivery_date")
-	private LocalDate deliveryDate;
+	private LocalDate deliveryDate=LocalDate.now();
 }
